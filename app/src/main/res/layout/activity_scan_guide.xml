@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0">
+
+    <!-- 상단 툴바 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_scanex"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFC2C2"
+        app:title="🤳  사진 촬영, 이미지 사용 방법  📸"
+        app:titleTextColor="#F87979"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationIconTint="#F87979"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 버튼 영역 그대로 유지 -->
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/GoEx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이미지 예시 보기"
+            android:textColor="#F87979"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:layout_marginBottom="4dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#FFC2C2"
+            app:rippleColor="?attr/colorControlHighlight"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/GoScan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="성분 검사하기"
+                android:layout_marginEnd="5dp"
+                android:textColor="#F87979"
+                android:textSize="16sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+
+            <Button
+                android:id="@+id/GoHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="스캔 이력 보기"
+                android:layout_marginStart="5dp"
+                android:textColor="#F87979"
+                android:textSize="16sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ScrollView 영역 그대로 유지 -->
+    <ScrollView
+        android:id="@+id/scrollGuide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_scanex"
+        app:layout_constraintBottom_toTopOf="@id/btnLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#FFDCDC"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvGuideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6dp"
+                android:text="1. 텍스트를 선명하게 촬영하기\n- 카메라 초점이 정확히 맞아야 합니다.\n\n2. 충분한 조명 확보하기\n- 빛이 고르게 퍼진 밝은 환경에서 촬영하는 것이 좋습니다.\n- 그림자, 반사, 강한 조명(하이라이트)은 인식률을 저하시킵니다.\n\n3. 텍스트를 정면에서 수평으로 촬영하기\n- 텍스트가 기울어지거나 회전된 상태에서는 인식률이 급격히 저하됩니다.\n\n4. 텍스트 크기와 해상도 확보하기\n- 최소 문자 크기: 영어/숫자 16x16px 이상, 한글 24x24px 이상 권장.\n\n5. 배경과 글자 색상 대비 확보하기\n- 배경과 글자 색상이 명확히 구분되어야 합니다.\n\n6. 곡면이나 왜곡된 표면은 피하기\n- 병 라벨, 휘어진 종이, 손에 쥔 명함처럼 곡면은 인식률이 낮습니다.\n\n7. 불필요한 영역 제거하기\n- 텍스트가 포함된 영역만 자르면 속도와 정확도가 향상됩니다."/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

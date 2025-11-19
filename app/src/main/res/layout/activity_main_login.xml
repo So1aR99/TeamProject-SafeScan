@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_checklist">
+
+    <!-- 앱 타이틀 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="임산부 안심 성분 스캐너"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#FF3C7F"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- 설명 문구 -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:text="성분을 스캔하거나 검색하여\n안심할 수 있는 제품을 확인하세요"
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- 버튼 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="성분 검사하기"
+        android:textColor="#F87979"
+        android:textSize="25sp"
+        android:padding="12dp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="#FFC2C2"
+        app:rippleColor="?attr/colorControlHighlight"/>
+
+
+
+
+
+</LinearLayout>

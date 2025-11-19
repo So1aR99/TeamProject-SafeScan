@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFC2C2"
+        app:title="성분 스캔"
+        app:titleTextColor="#F87979"
+        app:navigationIconTint="#F87979"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF8F0">
+
+            <Button
+                android:id="@+id/selectButton"
+                android:text="사진 선택"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#F87979"
+                android:textSize="15sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+
+            <Button
+                android:id="@+id/cameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사진 촬영"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#F87979"
+                android:textSize="15sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="16dp"
+                android:background="#FFDCDC"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사진이 인식이 잘 되도록하여 업로드 해주세요.\n\n 사진을 분석 하는데 시간이 조금 걸릴 수도 있으니\n잠시만 기다려주세요."
+                android:layout_marginTop="16dp"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/GuideBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="촬영 설명 보기"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textColor="#F87979"
+                android:textSize="15sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+
+            <Button
+                android:id="@+id/ScanlistBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스캔 이력 보기"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#F87979"
+                android:textSize="15sp"
+                android:padding="12dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="#FFC2C2"
+                app:rippleColor="?attr/colorControlHighlight"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

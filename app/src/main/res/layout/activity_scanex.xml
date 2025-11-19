@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ScanexActivity">
+
+    <!-- 상단 툴바 (뒤로가기 화살표 적용) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_scanex"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFC2C2"
+        app:title="촬영 설명"
+        app:titleTextColor="#F87979"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationIconTint="#F87979"/>
+
+    <!-- 전체 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#FFF8F0"
+        android:padding="8dp">
+
+        <!-- 올바른 방법 영역 -->
+        <LinearLayout
+            android:id="@+id/correctSection"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+            android:background="#FFDCDC">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/correctTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="올바른 방법"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/correctMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   O"
+                    android:textColor="#4CAF50"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scrollbars="horizontal"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example1"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example2"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example3"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example4"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example5"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example6"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- 틀린 방법 영역 -->
+        <LinearLayout
+            android:id="@+id/wrongSection"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+            android:background="#FFDCDC"
+            android:layout_marginTop="2dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/wrongTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="틀린 방법"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/wrongMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   X"
+                    android:textColor="#F44336"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scrollbars="horizontal"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example10"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example11"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example12"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example13"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example14"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example15"
+                        android:layout_marginEnd="6dp"/>
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/example16"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

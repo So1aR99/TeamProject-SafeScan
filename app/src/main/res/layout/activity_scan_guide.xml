@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#FFC2C2"
-        app:title="🤳  사진 촬영, 이미지 사용 방법  📸"
+        app:title="🤳 사진 촬영, 이미지 사용 방법"
         app:titleTextColor="#F87979"
         app:navigationIcon="?attr/homeAsUpIndicator"
         app:navigationIconTint="#F87979"

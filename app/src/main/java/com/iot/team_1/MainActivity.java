@@ -22,6 +22,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -481,7 +482,8 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, "성분표 재확인 필수!!!!!!!!!!!!!", Toast.LENGTH_LONG).show();
 
-            int originalColor = Color.parseColor("#F4D7E8");
+            ColorDrawable background = (ColorDrawable) layout.getBackground();
+            int originalColor = background != null ? background.getColor() : Color.parseColor("#F4D7E8");
             int alertColor = Color.parseColor("#FF3B30");
             int flashColor = Color.WHITE;
 
@@ -496,7 +498,7 @@ public class MainActivity extends AppCompatActivity {
             animator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    layout.setBackgroundColor(originalColor);
+                    layout.setBackgroundColor(originalColor); // 원래 배경으로 복원
                 }
             });
             animator.start();
@@ -517,7 +519,8 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, "안전한 성분으로 확인되었습니다 :)", Toast.LENGTH_LONG).show();
 
-            int originalColor = Color.parseColor("#F4D7E8");
+            ColorDrawable background = (ColorDrawable) layout.getBackground();
+            int originalColor = background != null ? background.getColor() : Color.parseColor("#F4D7E8");
             int safeColor = Color.parseColor("#4CAF50");
             int flashColor = Color.WHITE;
 
@@ -532,7 +535,7 @@ public class MainActivity extends AppCompatActivity {
             animator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    layout.setBackgroundColor(originalColor);
+                    layout.setBackgroundColor(originalColor); // 원래 배경으로 복원
                 }
             });
             animator.start();

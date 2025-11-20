@@ -62,8 +62,8 @@ import java.util.regex.Pattern;
 import android.content.SharedPreferences;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.iot.team_1.ScanHistory;
 import java.lang.reflect.Type;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -188,7 +188,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
             startActivity(intent);
         });
+        TCPConnectionManager.connect("10.10.108.167", 4000);
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        TCPConnectionManager.disconnect(); // 앱 종료 시 TCP 연결 종료
+    }
+
 
     // ★ 6. 툴바 클릭 처리 메서드 추가 ★
     // (onCreate 메서드 '밖', 클래스 '안'에 추가)
@@ -456,6 +463,7 @@ public class MainActivity extends AppCompatActivity {
             // [경고]
             resultStatus = "🚨 [경고!]";
             ingredientsText = String.join(", ", detectedIngredients);
+            TCPConnectionManager.send("1");
 
             // --- (기존 UI 로직 - 경고) ---
             StringBuilder warningHtml = new StringBuilder("⚠️ <b>주의 성분 발견:</b> ");
@@ -507,6 +515,7 @@ public class MainActivity extends AppCompatActivity {
             // [안심]
             resultStatus = "✅ [안심]";
             ingredientsText = ""; // 저장할 성분 없음
+            TCPConnectionManager.send("0");
 
             // --- (기존 UI 로직 - 안심) ---
             textView.append("\n\n ※ 텍스트 인식이 제대로 되지 않았을 수 있으니 재촬영 후 확인 ※");

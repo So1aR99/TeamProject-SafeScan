@@ -506,10 +506,10 @@ public class MainActivity extends AppCompatActivity {
 
             ColorDrawable background = (ColorDrawable) layout.getBackground();
             int originalColor = background != null ? background.getColor() : Color.parseColor("#F4D7E8");
-            int safeColor = Color.parseColor("#4CAF50");
+            int alertColor = Color.parseColor("#4CAF50");
             int flashColor = Color.WHITE;
 
-            ValueAnimator animator = ValueAnimator.ofArgb(flashColor, safeColor, flashColor);
+            ValueAnimator animator = ValueAnimator.ofArgb(flashColor, alertColor, flashColor);
             animator.setDuration(900);
             animator.setRepeatCount(4);
             animator.setRepeatMode(ValueAnimator.RESTART);

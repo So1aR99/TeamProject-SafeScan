@@ -285,31 +285,7 @@ public class MainActivity extends AppCompatActivity {
         return line.toString();
     }
 
-    // (preprocessImageEnhanced - 기존 코드와 동일)
-    // (참고: 이 함수는 현재 processImageFromBitmap에서 호출되지 않도록 비활성화했습니다.)
-    private Bitmap preprocessImageEnhanced(Bitmap bitmap){
-        int width = bitmap.getWidth() * 2;
-        int height = bitmap.getHeight() * 2;
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, width, height, true);
-        Bitmap processed = Bitmap.createBitmap(scaledBitmap.getWidth(), scaledBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(processed);
-        Paint paint = new Paint();
-        ColorMatrix cm = new ColorMatrix();
-        cm.setSaturation(0);
-        ColorMatrix contrast = new ColorMatrix();
-        float scale = 1.6f;
-        float translate = -15f;
-        contrast.set(new float[]{
-                scale,0,0,0,translate,
-                0,scale,0,0,translate,
-                0,0,scale,0,translate,
-                0,0,0,1,0
-        });
-        cm.postConcat(contrast);
-        paint.setColorFilter(new ColorMatrixColorFilter(cm));
-        canvas.drawBitmap(scaledBitmap,0,0,paint);
-        return processed;
-    }
+
 
     // (rotateImageIfRequired - 기존 코드와 동일)
     private Bitmap rotateImageIfRequired(Bitmap img, Uri selectedImage) throws IOException {

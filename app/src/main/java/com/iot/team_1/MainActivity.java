@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
             startActivity(intent);
         });
-        TCPConnectionManager.connect("10.10.108.167", 4000);
+        TCPConnectionManager.connect("10.10.108.183", 4000);    // 호스트 IP주소 변경 확인 ipconfig
     }
     @Override
     protected void onDestroy() {

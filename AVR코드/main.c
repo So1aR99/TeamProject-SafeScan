@@ -149,7 +149,7 @@ int main(void)
 				LCD_STR("SAFE!!!");
 				setColor(0,255,0); // 초록
 				_delay_ms(2000);
-				setColor(38,255,37);	// 초록색 점점 연해지게 그라데이션(2초 간격)
+				setColor(38,255,37);	// 초록색 점점 연해지게 그라데이션 효과(2초 간격)
 				_delay_ms(2000);
 				setColor(74,255,73);
 				_delay_ms(2000);
